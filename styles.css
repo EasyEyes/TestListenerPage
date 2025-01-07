@@ -1,0 +1,99 @@
+.background {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+  width: 100%;
+  /* background-color: #f7f7f7; */
+}
+
+.popup {
+  width: 90%;
+  height: 90%;
+  /* background-color: white; */
+}
+
+.col {
+  height: auto;
+}
+
+[class*='row'] {
+  padding: 1rem;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.options-panel .row {
+  height: auto;
+}
+
+.options-panel .row button {
+  width: auto;
+}
+
+#display {
+  min-height: 200px;
+  height: fit-content;
+  width: 200px;
+}
+
+.phrases {
+  transform: rotate(180deg);
+  /* margin-top: 100vh; */
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  overflow-y: scroll;
+  max-height: 70vh;
+  z-index: 1000;
+}
+
+.updateDisplay {
+  transform: rotate(180deg);
+  /* position: absolute;
+  bottom: 20vh;
+  right: 10px; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.turnMeToReadBelow {
+  position: absolute;
+  top: 20px;
+  /* font-size: larger; */
+  /* max-height: 25vh; */
+  overflow-y: scroll;
+  line-height: 1.2rem;
+}
+
+#calibrationBeginButton {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.container {
+  display: none;
+}
+
+#modelNumberInput {
+  width: 50vw;
+  height: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#modelNameInput {
+  width: 50vw;
+  height: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

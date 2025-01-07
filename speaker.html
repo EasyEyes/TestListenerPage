@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Speaker</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--CSS-->
+    <link href="./styles.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="./main.js"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔈</text></svg>"
+    />
+    <!--<script src="https://www.unpkg.com/sound-check"></script>-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+    integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script> -->
+    <script src="./speakerUI.js"></script>
+  </head>
+
+  <body>
+    <h1 id = 'speak123'></h1>
+    <div class="container-fluid background">
+      <div class="container bg-light popup shadow p-3 mb-5 rounded">
+        <div class="row">
+          <h1>Speaker Page [Admin]</h1>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia maxime sapiente
+            repudiandae est, magnam ex sint iure quo porro ullam debitis inventore at temporibus
+            quod ducimus nesciunt dolorem laboriosam. Eius!
+          </p>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-lg-3 options-panel shadow p-3 mb-5 bg-white rounded">
+            <h3>New Capture</h3>
+            <p class="lead">Run a new calibration from end-to-end</p>
+            <div class="row">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckVolume" />
+                <label class="form-check-label" for="flexSwitchCheckVolume">Volume</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckIR" />
+                <label class="form-check-label" for="flexSwitchCheckIR">Impulse Response</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckCombo" checked />
+                <label class="form-check-label" for="flexSwitchCheckCombo">Combination</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDownload" />
+                <label class="form-check-label" for="flexSwitchCheckDownload">Download Data</label>
+              </div>
+            </div>
+            <div class="row">
+              <input type="number" id="mlsOrder" class="form-control" value="18" />
+              <label class="form-label" for="mlsOrder">Order of MLS</label>
+            </div>
+            <div class="row">
+              <input type="number" id="numCapturesInput" class="form-control" value="3" />
+              <label class="form-label" for="numCapturesInput">Number of Captures</label>
+            </div>
+            <div class="row">
+              <input type="number" id="numMLSPerCaptureInput" class="form-control" value="4" />
+              <label class="form-label" for="numMLSPerCaptureInput"
+                >Number of MLS burts per capture</label
+              >
+            </div>
+            <div class="row">
+              <input type="number" id="calibrateSoundHzBox" class="form-control" value="52000" />
+              <label class="form-label" for="calibrateSoundHzBox"
+                >calibrateSoundHz</label
+              >
+            </div>
+            <div class="row">
+              <input type="number" id="calibrateSoundSamplingDesiredBitsBox" class="form-control" value="24" />
+              <label class="form-label" for="calibrateSoundSamplingDesiredBitsBox"
+                >calibrateSoundSamplingDesiredBits</label
+              >
+            </div>
+            <div class="row">
+              <button id="calibrationBeginButton" type="button" class="btn btn-primary">
+                Calibrate
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-3 shadow p-3 mb-5 bg-white rounded">
+            <h3>Previous Captures</h3>
+            <p class="lead">Upload a specific portion of the calibration to test it</p>
+            <div class="mb-3">
+              <label for="previous-capture-csv" class="form-label">Recorded MLS</label>
+              <input class="form-control" type="file" id="previous-capture-csv" />
+            </div>
+            <div class="mb-3">
+              <label for="iir-csv" class="form-label">Inverted Impulse Response</label>
+              <input class="form-control" type="file" id="iir-csv" />
+            </div>
+            <div class="mb-3">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchPlayAndRecord" />
+                <label class="form-check-label" for="flexSwitchPlayAndRecord">Play & Record</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 shadow p-3 mb-5 bg-white rounded">
+            <h3>WAV file test</h3>
+            <p class="lead">Upload a WAV file to play it</p>
+            <div class="mb-3">
+              <label for="wav-file" class="form-label">WAV File</label>
+              <input class="form-control" type="file" id="wav-file" />
+            </div>
+            <audio id="sound" controls></audio>
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-lg-3 shadow p-3 mb-5 bg-white rounded">
+            <h3>Output</h3>
+            <div class="row justify-content-center">
+              <div id="display" class="border"></div>
+              <span id="updates"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

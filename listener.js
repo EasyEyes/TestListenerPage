@@ -121,6 +121,18 @@ switch (isSmartPhone) {
     calibrationBeginButton2.remove();
     container.style.display = 'block';
     // event listener for when the page is loaded
+    const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+    console.log('Got user media');
+    if (stream) {
+      console.log('Getting devices');
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      console.log(devices);
+      const mics = devices.filter(device => device.kind === 'audioinput');
+      mics.forEach(mic => {
+        console.log('Mic: ', mic);
+      });
+      
+    }
     window.addEventListener('load', () => {
       // set the text of the html elements
       recordingInProgressElement.innerHTML = recordingInProgress;

@@ -95,8 +95,8 @@ switch (isSmartPhone) {
       } catch (err) {
         console.log(err);
       }
-      listenerParameters.microphoneFromAPI = webAudioDeviceNames.deviceID;
-      listenerParameters.microphoneDeviceId = webAudioDeviceNames.deviceID;
+      listenerParameters.microphoneFromAPI = webAudioDeviceNames.microphone;
+      listenerParameters.microphoneDeviceId = webAudioDeviceNames.microphone;
       let lock = null;
       try {
         if ('wakeLock' in navigator) {

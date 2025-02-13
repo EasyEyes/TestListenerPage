@@ -42,8 +42,34 @@ hr {
 .phrases {
   transform: rotate(180deg);
   width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: left;
+  position: fixed;
+  bottom: 20px; /* Will appear at top after rotation */
+  left: 20px;
+  padding: 20px;
+}
+
+.phrases h1 {
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.phrases .lead {
+  margin-bottom: 10px;
+}
+
+.phrases #calibrationBeginButton {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.turnMeToReadBelow {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  line-height: 1.2rem;
+  text-align: left;
 }
 
 .updateDisplay {
@@ -55,20 +81,6 @@ hr {
   text-align: center;
   background: white;
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-}
-
-.turnMeToReadBelow {
-  position: absolute;
-  top: 20px;
-  /* font-size: larger; */
-  /* max-height: 25vh; */
-  overflow-y: scroll;
-  line-height: 1.2rem;
-}
-
-#calibrationBeginButton {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
 }
 
 .container {
